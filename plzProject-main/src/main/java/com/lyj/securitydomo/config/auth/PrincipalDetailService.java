@@ -21,7 +21,7 @@ public class PrincipalDetailService implements UserDetailsService {
         log.info("loadUserByUsername");
         User user = userRepository.findByUsername(username);
         if(user==null){
-           return null;
+            return null;
         }
         PrincipalDetails principalDetails = new PrincipalDetails(user); //시큐리티 세션에 유저 정보가 저장됨
         log.info(principalDetails);

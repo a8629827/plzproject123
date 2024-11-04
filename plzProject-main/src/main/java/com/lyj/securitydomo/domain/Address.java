@@ -20,7 +20,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
-    private int user_id; //userId
-    private String city; //00시
+    private int user_id; // userId
+    private String city; // 00시
     private String state; // 00구
 }

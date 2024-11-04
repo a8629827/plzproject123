@@ -16,7 +16,7 @@ public class UserController {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @GetMapping("/join")
+    @GetMapping("/join") //조인 html 호출
     public void join(){
     }
 
@@ -30,7 +30,7 @@ public class UserController {
         userRepository.save(user);
         return "redirect:/user/login";
     }
-    @GetMapping("login")
+    @GetMapping("login") //로그인 html 호출
     public void login(){
     }
 }

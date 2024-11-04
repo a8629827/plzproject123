@@ -2,28 +2,25 @@ package com.lyj.securitydomo.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.ColumnDefault;
 
-import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity(name="role")
+@Entity(name="gender")
 @Builder
-public class Role {
+public class Gender {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long roleId;
+    private Long genderId;
 
     @Column(length = 20)
-    private String role_name;
+    private String genderName;
 
 //    @ManyToOne(fetch = FetchType.LAZY,
 //            cascade = CascadeType.ALL,
 //            optional = true)
 //    @JoinColumn(name="user_id")
 //    private User user;
-//
 //    public void updateHitcount() {
 //        this.hitcount = this.hitcount+1;
 //    }

@@ -21,7 +21,8 @@ public class BoardController {
         return "board/insert";
     }
     @PostMapping("/insert")
-    public String insert(Board board, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+    public String insert(Board board,
+                         @AuthenticationPrincipal PrincipalDetails principalDetails) {
         boardService.insert(board, principalDetails.getUser()); //principalDetails를 통해 로그인한 사용자 정보를 가져옴(권한 정보 포함)
         return "redirect:/board/list";
     }

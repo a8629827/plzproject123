@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -24,10 +25,10 @@ public class User {
     private Long userId; //고유 식별자
 
     @Column(length = 50, nullable = true)
-    private String name;
+    private String name; //이름
 
-    @Column(length = 50, nullable = true)
-    private String username; //이름
+    @Column(length = 50, nullable = true, unique = true)
+    private String username; //ID
 
     @Column(length = 255, nullable = true)
     private String password; //비밀번호
@@ -36,8 +37,8 @@ public class User {
     private String email; //이메일
 
     @Column(nullable = false)
-    private String birthDate; //생일
-    private int gender; //성별
+    private LocalDate birthDate; //생일
+    private String gender; //성별
     private String role; //권한
     private String address; //지역
 
