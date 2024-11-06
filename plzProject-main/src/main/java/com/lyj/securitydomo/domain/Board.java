@@ -23,6 +23,7 @@ public class Board {
 
     //@ColumnDefault("0")
     private Long hitcount;
+    private Long replycount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
@@ -31,6 +32,7 @@ public class Board {
     @PrePersist
     public void prePersist(){
         this.hitcount=this.hitcount==null?0:this.hitcount+1;
+        this.replycount=this.replycount==null?0:this.replycount+1;
     }
 //    public void updateHitcount() {
 //        this.hitcount = this.hitcount+1;

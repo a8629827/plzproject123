@@ -20,6 +20,7 @@ public class PrincipalDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("loadUserByUsername");
         User user = userRepository.findByUsername(username);
+//                User user = userRepository.findByUsername(username);
         if(user==null){
             return null;
         }

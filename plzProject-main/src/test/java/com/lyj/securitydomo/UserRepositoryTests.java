@@ -2,13 +2,16 @@ package com.lyj.securitydomo;
 
 import com.lyj.securitydomo.domain.User;
 import com.lyj.securitydomo.repository.UserRepository;
+import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.stream.IntStream;
-
+@SpringBootTest
+@Log4j2
 public class UserRepositoryTests {
     @Autowired
     private UserRepository userRepository;
@@ -22,7 +25,7 @@ public class UserRepositoryTests {
                     .username("username" + i)
                     .password("password" + i)
                     .email("email" + i)
-                    .birthDate(LocalDate.parse("2020-10-10T00:00:00"))
+                    .birthDate(LocalDate.parse("2020-10-10"))
                     .regDate(LocalDateTime.now())
                     .gender( "gender" + i)
                     .role("role" + i)

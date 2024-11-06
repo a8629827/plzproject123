@@ -21,10 +21,10 @@ public class UserServiceImpl implements UserService {
         this.modelMapper = modelMapper;
     }
 
+
     @Override
     public UserDTO getUserByUsername(String username) {
-        Optional<User> user = userRepository.findByUsername(username);
-        return user.map(this::convertToDTO).orElse(null);
+        return null;
     }
 
     @Override

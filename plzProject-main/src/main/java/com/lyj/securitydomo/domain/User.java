@@ -11,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -40,7 +41,9 @@ public class User {
     private LocalDate birthDate; //생일
     private String gender; //성별
     private String role; //권한
-    private String address; //지역
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Address> address; // 사용자 주소 리스트
 
     @CreationTimestamp
     @Column(name="regdate", updatable = false)

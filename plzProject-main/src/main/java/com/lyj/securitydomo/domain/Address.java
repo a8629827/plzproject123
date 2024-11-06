@@ -1,26 +1,28 @@
 package com.lyj.securitydomo.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
 @Entity(name="address")
 @Builder
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
-    private int user_id; // userId
+
+    @ManyToOne
+    @JoinColumn(name = "userId", referencedColumnName = "userId")  // userId는 User 테이블의 PK
+    private User user;  // 사용자 엔티티와 연관
+
     private String city; // 00시
     private String state; // 00구
+
+
+
 }
