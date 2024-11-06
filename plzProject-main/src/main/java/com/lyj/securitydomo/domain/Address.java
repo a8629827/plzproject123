@@ -18,7 +18,7 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "userId", referencedColumnName = "userId")  // userId는 User 테이블의 PK
-    private User user;  // 사용자 엔티티와 연관
+    private User address;  // 사용자 엔티티와 연관
 
     private String city; // 00시
     private String state; // 00구
